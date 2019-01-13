@@ -10,5 +10,5 @@ services:
         cap_add:
             - NET_ADMIN
         volumes:
-            - ./dnsmasq.conf:/etc/dnsmasq.conf:ro
-        command: --log-facility=/dev/stdout
+            - .:/conf:ro
+        command: --conf-file=/conf/dnsmasq.conf --log-facility=/dev/stdout
